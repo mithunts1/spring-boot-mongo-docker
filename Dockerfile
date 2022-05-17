@@ -10,4 +10,4 @@ COPY target/spring-boot-mongo-1.0.jar $PROJECT_HOME/spring-boot-mongo.jar
 
 WORKDIR $PROJECT_HOME
 EXPOSE 8080
-CMD ["java" ,"-jar","./spring-boot-mongo.jar"]
+CMD ["java","-Dspring.data.mongodb.uri=mongodb://docker_mongo:27017/spring-boot-mongo","-Djava.security.egd=file:/master/./urandom","-jar","/spring-boot-mongo.jar"]
